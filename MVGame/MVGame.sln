@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVGame", "MVGame\MVGame\MVGame.csproj", "{5299E2E4-751C-42F7-9B82-1CB34B420CEE}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "MVGameContent", "MVGame\MVGameContent\MVGameContent.contentproj", "{7CB34960-300A-4197-BDCE-EC6101CF9695}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5299E2E4-751C-42F7-9B82-1CB34B420CEE}.Debug|x86.ActiveCfg = Debug|x86
+		{5299E2E4-751C-42F7-9B82-1CB34B420CEE}.Debug|x86.Build.0 = Debug|x86
+		{5299E2E4-751C-42F7-9B82-1CB34B420CEE}.Release|x86.ActiveCfg = Release|x86
+		{5299E2E4-751C-42F7-9B82-1CB34B420CEE}.Release|x86.Build.0 = Release|x86
+		{7CB34960-300A-4197-BDCE-EC6101CF9695}.Debug|x86.ActiveCfg = Debug|x86
+		{7CB34960-300A-4197-BDCE-EC6101CF9695}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
