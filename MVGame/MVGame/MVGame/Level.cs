@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,13 +12,10 @@ namespace MVGame
         private ContentManager Content;
         private int Width;
         private int Height;
-        private int LevelNum = 1;
         private MouseState mouse;
         private KeyboardState prevKeyboard;
         private KeyboardState keyboard;
         private int TileIndex = 2;
-        //private int LevelNumber = 1;
-        //private string fileName;
         private FileHumper Humper;
 
         public Level(ContentManager Content, int width, int height)
