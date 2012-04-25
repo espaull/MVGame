@@ -1,2 +1,1 @@
-MVGame
-==========
+A small metroidvania game. Hopefully.
