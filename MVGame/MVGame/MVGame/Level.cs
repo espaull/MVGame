@@ -136,6 +136,21 @@ namespace MVGame
                 TileIndex = 6;
             }
 
+            if (keyboard.IsKeyDown(Keys.D7) && !prevKeyboard.IsKeyDown(Keys.D7))
+            {
+                TileIndex = 7;
+            }
+
+            if (keyboard.IsKeyDown(Keys.D8) && !prevKeyboard.IsKeyDown(Keys.D8))
+            {
+                TileIndex = 8;
+            }
+
+            if (keyboard.IsKeyDown(Keys.D9) && !prevKeyboard.IsKeyDown(Keys.D9))
+            {
+                TileIndex = 9;
+            }
+
             if (keyboard.IsKeyDown(Keys.X) && !prevKeyboard.IsKeyDown(Keys.X))
             {
                 clearLevel();
