@@ -17,6 +17,7 @@ namespace MVGame
         private KeyboardState keyboard;
         private int TileIndex = 2;
         private FileHumper Humper;
+        private Player Player;
 
         public Level(ContentManager Content, int width, int height)
         {
@@ -27,6 +28,7 @@ namespace MVGame
             Tiles = new Tile[Width, Height];
             TheLevel = new int[Width, Height];
             Humper = new FileHumper(Width, Height);
+            Player = new Player(Content.Load<Texture2D>("characters/player"));
         }
         
         public void Update()
@@ -54,6 +56,8 @@ namespace MVGame
             }
 
             sBatch.End();
+
+            Player.Draw(sBatch);
         }
 
         private Tile LoadTile(Vector2 pos)

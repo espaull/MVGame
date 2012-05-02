@@ -21,7 +21,7 @@ namespace MVGame
             this.Pos = Pos;
             this.TexNum = TexNum;
 
-            TileRect = new Rectangle((int)Pos.X, (int)Pos.Y, Texture.Width, Texture.Height);
+            //TileRect = new Rectangle((int)Pos.X, (int)Pos.Y, Texture.Width, Texture.Height);
         }
     }
 }
