@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -10,14 +11,13 @@ namespace MVGame
         public static Tile[,] Tiles { get; set; }
         public static int[,] TheLevel { get; set; }
         private ContentManager Content;
-        private int Width;
-        private int Height;
+        public static int Width;
+        public static int Height;
         private MouseState mouse;
         private KeyboardState prevKeyboard;
         private KeyboardState keyboard;
         private int TileIndex = 2;
         private FileHumper Humper;
-        private Player Player;
 
         public Level(ContentManager Content, int width, int height)
         {
@@ -27,8 +27,7 @@ namespace MVGame
 
             Tiles = new Tile[Width, Height];
             TheLevel = new int[Width, Height];
-            Humper = new FileHumper(Width, Height);
-            Player = new Player(Content.Load<Texture2D>("characters/player"));
+            Humper = new FileHumper();
         }
         
         public void Update()
@@ -42,8 +41,6 @@ namespace MVGame
 
         public void Draw(SpriteBatch sBatch)
         {
-            sBatch.Begin();
-
             for (int x = 0; x < Width; x++)
             {
                 for (int y = 0; y < Height; y++)
@@ -54,21 +51,25 @@ namespace MVGame
                     }
                 }
             }
-
-            sBatch.End();
-
-            Player.Draw(sBatch);
         }
 
         private Tile LoadTile(Vector2 pos)
         {
-            return new Tile(Content.Load<Texture2D>("tiles/tile" + TileIndex), pos, TileIndex);
+            if (TileIndex == 0)
+            {
+                return new Tile(Content.Load<Texture2D>("tiles/tile" + TileIndex), pos, TileIndex, true);
+            }
+            else
+            {
+                return new Tile(Content.Load<Texture2D>("tiles/tile" + TileIndex), pos, TileIndex, false);
+            }
         }
 
         private void handleMouse(MouseState mouse)
         {
             int mPosX = mouse.X / Tile.Width;
             int mPosY = mouse.Y / Tile.Height;
+            Console.WriteLine(mPosX.ToString());
 
             if (mPosX >= 40 || mPosX < 0 || mPosY >= 23 || mPosY < 0)
             {

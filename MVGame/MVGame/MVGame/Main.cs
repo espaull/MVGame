@@ -16,6 +16,7 @@ namespace MVGame
         private Level Level;
         private Vector2 Center;
         private Vector2 FontCenter;
+        private Player Player;
         bool paused = false;
 
         public Main()
@@ -33,6 +34,7 @@ namespace MVGame
             IsMouseVisible = true;
 
             Level = new Level(this.Content, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            Player = new Player(Content.Load<Texture2D>("characters/player"));
             Center = new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2);
 
             Components.Add(new FrameRateCounter(this));
@@ -75,6 +77,7 @@ namespace MVGame
             if (paused == false)
             {
                 Level.Update();
+                Player.Update();
             }
 
             prevKeyboard = keyboard;
@@ -84,9 +87,11 @@ namespace MVGame
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            Level.Draw(spriteBatch);
 
             spriteBatch.Begin();
+
+            Level.Draw(spriteBatch);
+            Player.Draw(spriteBatch);
 
             spriteBatch.DrawString(Font, "P = Pause", new Vector2(5, 30), Color.White);
 

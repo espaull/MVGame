@@ -12,10 +12,10 @@ namespace MVGame
         private Tile[,] Tiles;
         private int[,] TheLevel;
 
-        public FileHumper(int Width, int Height)
+        public FileHumper()
         {
-            this.Width = Width;
-            this.Height = Height;
+            Width = Level.Width;
+            Height = Level.Height;
         }
          
         public void saveGame()
